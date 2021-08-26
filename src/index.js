@@ -19,7 +19,7 @@ import './style.scss';
  */
 import Edit from './edit';
 import save from './save';
-// import './variations';
+import './variations';
 
 /**
  * Every block starts by registering a new block type definition.

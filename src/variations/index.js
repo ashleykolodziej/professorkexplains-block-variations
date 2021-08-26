@@ -17,7 +17,37 @@ import { __ } from '@wordpress/i18n';
  */
 
 const CONTENT = [
-    // We'll write our variation here.
+	// We'll write our variation here.
+	[ 'core/heading', {
+		textAlign: 'center',
+		placeholder: 'Write a heading about callouts here'
+	} ],
+	[ 'core/columns', {"verticalAlignment":"center","align":"wide"}, [
+		['core/column', {}, [
+			[ 'core/image' ],
+			[ 'core/heading', {"textAlign":"center","level":3} ],
+			[ 'core/paragraph', {"align":"center"} ],
+			[ 'core/buttons', {"contentJustification":"center"}, [
+				[ 'core/button' ]
+			] ]
+		] ],
+		['core/column', {}, [
+			[ 'core/image' ],
+			[ 'core/heading', {"textAlign":"center","level":3} ],
+			[ 'core/paragraph', {"align":"center"} ],
+			[ 'core/buttons', {"contentJustification":"center"}, [
+				[ 'core/button' ]
+			] ]
+		] ],
+		['core/column', {}, [
+			[ 'core/image' ],
+			[ 'core/heading', {"textAlign":"center","level":3} ],
+			[ 'core/paragraph', {"align":"center"} ],
+			[ 'core/buttons', {"contentJustification":"center"}, [
+				[ 'core/button' ]
+			] ]
+		] ],
+	] ],
 ];
 
 /*
@@ -25,12 +55,10 @@ const CONTENT = [
  */
 const variationsExample = {
 	name: 'variations-example',
-	title: __( 'Group Variation Example', 'variations-example' ),
-	description: __( 'A demo for WordPress fans.', 'variations-example' ),
+	title: __( 'Callout Variations Example', 'variations-example' ),
+	description: __( 'Sets up a three column callout structure.', 'variations-example' ),
 	scope: [ 'inserter' ],
-	attributes: {
-		align: 'full',
-	},
+	attributes: {"align":"full","style":{"spacing":{"padding":{"top":"60px","right":"60px","bottom":"60px","left":"60px"}}},"gradient":"red-to-purple"},
 	icon: {
 		background: '#000',
 		foreground: '#fff',

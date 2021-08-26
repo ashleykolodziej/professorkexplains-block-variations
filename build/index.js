@@ -253,6 +253,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/edit.js");
 /* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./src/save.js");
+/* harmony import */ var _variations__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./variations */ "./src/variations/index.js");
 /**
  * Registers a new block provided a unique name and an object defining its behavior.
  *
@@ -273,7 +274,7 @@ __webpack_require__.r(__webpack_exports__);
  */
 
 
- // import './variations';
+
 
 /**
  * Every block starts by registering a new block type definition.
@@ -345,6 +346,99 @@ __webpack_require__.r(__webpack_exports__);
 function save() {
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["useBlockProps"].save(), Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Today, we\'re going to write a variation in Gutenberg!', 'variations-example'));
 }
+
+/***/ }),
+
+/***/ "./src/variations/index.js":
+/*!*********************************!*\
+  !*** ./src/variations/index.js ***!
+  \*********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/**
+ * Registers a new block variation provided a unique name and an object defining its behavior.
+ *
+ * @see https://developer.wordpress.org/block-editor/packages/packages-blocks/#registerBlockVariation
+ */
+
+/**
+ * Retrieves the translation of text.
+ *
+ * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
+ */
+
+
+/**
+ * Variation content
+ */
+
+var CONTENT = [// We'll write our variation here.
+['core/heading', {
+  textAlign: 'center',
+  placeholder: 'Write a heading about callouts here'
+}], ['core/columns', {
+  "verticalAlignment": "center",
+  "align": "wide"
+}, [['core/column', {}, [['core/image'], ['core/heading', {
+  "textAlign": "center",
+  "level": 3
+}], ['core/paragraph', {
+  "align": "center"
+}], ['core/buttons', {
+  "contentJustification": "center"
+}, [['core/button']]]]], ['core/column', {}, [['core/image'], ['core/heading', {
+  "textAlign": "center",
+  "level": 3
+}], ['core/paragraph', {
+  "align": "center"
+}], ['core/buttons', {
+  "contentJustification": "center"
+}, [['core/button']]]]], ['core/column', {}, [['core/image'], ['core/heading', {
+  "textAlign": "center",
+  "level": 3
+}], ['core/paragraph', {
+  "align": "center"
+}], ['core/buttons', {
+  "contentJustification": "center"
+}, [['core/button']]]]]]]];
+/*
+ * New `core/group` block variation.
+ */
+
+var variationsExample = {
+  name: 'variations-example',
+  title: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Callout Variations Example', 'variations-example'),
+  description: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Sets up a three column callout structure.', 'variations-example'),
+  scope: ['inserter'],
+  attributes: {
+    "align": "full",
+    "style": {
+      "spacing": {
+        "padding": {
+          "top": "60px",
+          "right": "60px",
+          "bottom": "60px",
+          "left": "60px"
+        }
+      }
+    },
+    "gradient": "red-to-purple"
+  },
+  icon: {
+    background: '#000',
+    foreground: '#fff',
+    src: 'layout'
+  },
+  innerBlocks: CONTENT
+};
+Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockVariation"])('core/group', variationsExample);
 
 /***/ }),
 
